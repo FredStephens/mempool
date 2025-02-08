@@ -49,6 +49,7 @@ __CORE_RPC_PASSWORD__=${CORE_RPC_PASSWORD:=mempool}
 __CORE_RPC_TIMEOUT__=${CORE_RPC_TIMEOUT:=60000}
 __CORE_RPC_COOKIE__=${CORE_RPC_COOKIE:=false}
 __CORE_RPC_COOKIE_PATH__=${CORE_RPC_COOKIE_PATH:=""}
+__CORE_RPC_DEBUG_LOG_PATH__=${CORE_RPC_DEBUG_LOG_PATH:=""}
 
 # ELECTRUM
 __ELECTRUM_HOST__=${ELECTRUM_HOST:=127.0.0.1}
@@ -148,6 +149,10 @@ __REPLICATION_SERVERS__=${REPLICATION_SERVERS:=[]}
 __MEMPOOL_SERVICES_API__=${MEMPOOL_SERVICES_API:="https://mempool.space/api/v1/services"}
 __MEMPOOL_SERVICES_ACCELERATIONS__=${MEMPOOL_SERVICES_ACCELERATIONS:=false}
 
+# STRATUM
+__STRATUM_ENABLED__=${STRATUM_ENABLED:=false}
+__STRATUM_API__=${STRATUM_API:="http://localhost:1234"}
+
 # REDIS
 __REDIS_ENABLED__=${REDIS_ENABLED:=false}
 __REDIS_UNIX_SOCKET_PATH__=${REDIS_UNIX_SOCKET_PATH:=""}
@@ -207,6 +212,7 @@ sed -i "s!__CORE_RPC_PASSWORD__!${__CORE_RPC_PASSWORD__}!g" mempool-config.json
 sed -i "s!__CORE_RPC_TIMEOUT__!${__CORE_RPC_TIMEOUT__}!g" mempool-config.json
 sed -i "s!__CORE_RPC_COOKIE__!${__CORE_RPC_COOKIE__}!g" mempool-config.json
 sed -i "s!__CORE_RPC_COOKIE_PATH__!${__CORE_RPC_COOKIE_PATH__}!g" mempool-config.json
+sed -i "s!__CORE_RPC_DEBUG_LOG_PATH__!${__CORE_RPC_DEBUG_LOG_PATH__}!g" mempool-config.json
 
 sed -i "s!__ELECTRUM_HOST__!${__ELECTRUM_HOST__}!g" mempool-config.json
 sed -i "s!__ELECTRUM_PORT__!${__ELECTRUM_PORT__}!g" mempool-config.json
@@ -297,6 +303,10 @@ sed -i "s!__REPLICATION_SERVERS__!${__REPLICATION_SERVERS__}!g" mempool-config.j
 # MEMPOOL_SERVICES
 sed -i "s!__MEMPOOL_SERVICES_API__!${__MEMPOOL_SERVICES_API__}!g" mempool-config.json
 sed -i "s!__MEMPOOL_SERVICES_ACCELERATIONS__!${__MEMPOOL_SERVICES_ACCELERATIONS__}!g" mempool-config.json
+
+# STRATUM
+sed -i "s!__STRATUM_ENABLED__!${__STRATUM_ENABLED__}!g" mempool-config.json
+sed -i "s!__STRATUM_API__!${__STRATUM_API__}!g" mempool-config.json
 
 # REDIS
 sed -i "s!__REDIS_ENABLED__!${__REDIS_ENABLED__}!g" mempool-config.json

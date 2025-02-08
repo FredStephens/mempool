@@ -74,7 +74,8 @@ describe('Mempool Backend Config', () => {
         PASSWORD: 'mempool',
         TIMEOUT: 60000,
         COOKIE: false,
-        COOKIE_PATH: '/bitcoin/.cookie'
+        COOKIE_PATH: '/bitcoin/.cookie',
+        DEBUG_LOG_PATH: '',
       });
 
       expect(config.SECOND_CORE_RPC).toStrictEqual({
@@ -157,6 +158,11 @@ describe('Mempool Backend Config', () => {
         ENABLED: true,
         PAID: false,
         API_KEY: '',
+      });
+
+      expect(config.STRATUM).toStrictEqual({
+        ENABLED: false,
+        API: 'http://localhost:1234',
       });
     });
   });
